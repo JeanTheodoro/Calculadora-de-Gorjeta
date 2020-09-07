@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/image_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:src="@drawable/ic_gorjeta"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="32dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo">
 
         <EditText
             android:id="@+id/value"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
-            android:padding="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_editext"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="@string/value"
-            android:background="@drawable/shape_editext"/>
+            android:inputType="textPersonName"
+            android:padding="10dp" />
 
         <EditText
             android:id="@+id/person"
@@ -41,22 +48,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:padding="10dp"
             android:layout_weight="1"
+            android:background="@drawable/shape_editext"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="@string/person"
-            android:background="@drawable/shape_editext"/>
+            android:inputType="textPersonName"
+            android:padding="10dp" />
 
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="32dp">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:id="@+id/porcentagem_value"
@@ -64,27 +73,28 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:text="@string/porcentagem"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_weight="1"
-            android:max="100"/>
+            android:max="100" />
 
 
     </LinearLayout>
 
-
-
-
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,73 +109,80 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
+            android:background="@drawable/shape_editext"
             android:padding="5dp"
-            android:textSize="20dp"
             android:text="@string/Gorjeta_text"
             android:textAlignment="center"
-            android:background="@drawable/shape_editext"/>
+            android:textSize="20dp" />
 
 
     </LinearLayout>
 
-
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/total"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="96dp"
+            android:background="@drawable/shape_editext"
             android:padding="5dp"
-            android:textSize="20dp"
             android:text="@string/total_text"
             android:textAlignment="center"
-            android:background="@drawable/shape_editext"/>
+            android:textSize="20dp" />
 
 
     </LinearLayout>
 
-
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/total_person"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/total_person"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:background="@drawable/shape_editext"
             android:padding="5dp"
-            android:textSize="20dp"
-            android:textAlignment="center"
             android:text="@string/total_pessoa_text"
-            android:background="@drawable/shape_editext"/>
+            android:textAlignment="center"
+            android:textSize="20dp" />
 
 
     </LinearLayout>
 
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
